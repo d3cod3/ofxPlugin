@@ -16,7 +16,7 @@ void ofApp::setup() {
 #ifdef _WIN32
 	factoryRegister.loadPlugin("../examplePlugin.dll", true);
 #else
-	factoryRegister.loadPlugin("../examplePlugin.dylib", true);
+	factoryRegister.loadPlugin("../examplePlugin.bundle", true);
 #endif
 
 	// Every time the mouse moves, we're going to choose a new shape to make (i.e. step through the list of factories)
@@ -60,7 +60,7 @@ void ofApp::mouseMoved(int x, int y){
 	// (2/2)
 	// We call 'makeUntyped' on the factory
 	// This creates a new class, which is returned in a shared_ptr<BaseShape>
-	// This shared_ptr can be dynamically cast into the specific type (e.g. RectangleShape / CircleShape) if we need 
+	// This shared_ptr can be dynamically cast into the specific type (e.g. RectangleShape / CircleShape) if we need
 	auto shape = iterator->second->makeUntyped();
 
 	cout << shape->getTypeName() << ", ";
@@ -102,6 +102,6 @@ void ofApp::gotMessage(ofMessage msg){
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
+void ofApp::dragEvent(ofDragInfo dragInfo){
 
 }
