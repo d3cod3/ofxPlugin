@@ -34,3 +34,8 @@ Release/
 *~.xml
 
 Sketch*/
+
+build-exampleApp-Desktop-Debug/*
+build-exampleApp-Desktop-Release/*
+build-examplePlugin-Desktop-Debug/*
+build-examplePlugin-Desktop-Release/*
