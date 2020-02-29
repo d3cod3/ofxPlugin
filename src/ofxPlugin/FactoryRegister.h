@@ -113,7 +113,7 @@ namespace ofxPlugin {
 			if (path.is_relative()) {
 				path = std::filesystem::path(ofToDataPath("")) / path;
 			}
-			
+
 			//attempt to load DLL
 #ifdef _MSC_VER
 			auto dll = LoadLibraryW(path.wstring().c_str());
@@ -135,7 +135,7 @@ namespace ofxPlugin {
 				FreeLibrary(dll);
 				return false;
 			}
-			
+
 			auto pluginTypeName = getPluginTypeName();
 			auto ourTypeName = typeid(ModuleBaseType).name();
 			if (string(pluginTypeName) != string(ourTypeName)) {
@@ -145,7 +145,7 @@ namespace ofxPlugin {
 				FreeLibrary(dll);
 				return false;
 			}
-			
+
 			//attempt to initialise plugin
 			auto initPlugin = (InitPluginFunctionType) GetProcAddress(dll, "initPlugin");
 			if (!initPlugin) {
@@ -157,7 +157,7 @@ namespace ofxPlugin {
 			}
 
 			//we are currently in the main application
-			//the initialisation arguments are the 'ofMainLoop' singleton, this factory register, and the 
+			//the initialisation arguments are the 'ofMainLoop' singleton, this factory register, and the
 			auto singletonRegisterRawPointer = ofxSingleton::Register::X().getInstance().get();
 			PluginInitArgs pluginInitArgs = {
 				ofGetMainLoop(),
@@ -182,7 +182,7 @@ namespace ofxPlugin {
 #ifdef TARGET_WIN32
                 string desiredExtension = ".dll";
 #else
-                string desiredExtension = ".dylib";
+                string desiredExtension = ".bundle";
 #endif
 				if (ofToLower(extension.string()) == desiredExtension) {
 					try {
