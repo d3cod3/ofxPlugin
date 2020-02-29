@@ -5,7 +5,7 @@ void CircleShape::draw() {
 	ofPushStyle();
 
 	ofSetColor(255, 100, 100);
-	ofCircle(x, y, 15);
+    ofDrawCircle(x, y, 15);
 
 	ofPopStyle();
 }
