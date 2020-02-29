@@ -22,13 +22,6 @@ Currently runs on oF 0.9.0 in Windows. Thanks to work by @satoruhiga, ofxPlugin 
 
 Tested on Visual Studio 2015, but should work on earlier versions too (be aware of changing the `Platform Toolset` option in all the relevant projects).
 
-## Addon dependencies
-
-You must have the following addons available in your `addons` folder:
-
-* [ofxSingleton](https://github.com/elliotwoods/ofxSingleton) (tested with 3af7ff04ff2fcb71a11c0960e8dfe32f043f4165 on 2015/10/08)
-* [ofxAddonLib](https://github.com/elliotwoods/ofxAddonLib)   (tested with 6c3b3a6bfcaacf8b6340abb8444030e604b65e89 on 2015/10/08)
-
 # Notes
 
 ## Usage pattern
