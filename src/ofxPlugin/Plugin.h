@@ -11,7 +11,7 @@
 #ifdef WIN32
 #define OFXPLUGIN_EXPORT __declspec(dllexport)
 #else
-#define OFXPLUGIN_EXPORT
+#define OFXPLUGIN_EXPORT __attribute__((visibility("default")))
 #endif
 
 
@@ -44,7 +44,7 @@ OFXPLUGIN_EXPORT void initPlugin(ofxPlugin::FactoryRegister<ModuleBaseType>::Plu
 #define OFXPLUGIN_PLUGIN_MODULES_BEGIN(ModuleBaseType) \
 extern "C" { \
 	OFXPLUGIN_INIT_DEFINITION_BEGIN(ModuleBaseType)
-	
+
 #define OFXPLUGIN_PLUGIN_MODULES_END \
 	OFXPLUGIN_INIT_DEFINITION_END \
 }
